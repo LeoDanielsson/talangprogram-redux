@@ -22,7 +22,6 @@ main {
   text-align: center;
 }
 
-button {
-  font-size: inherit;
-  padding: 8px;
+ul {
+  list-style: none;
 }
