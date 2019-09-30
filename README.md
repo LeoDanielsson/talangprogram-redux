@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Excercises
 
-## Available Scripts
+## 1
 
-In the project directory, you can run:
+A. In index.js, create a redux store, using the reducer in reducer.js
 
-### `npm start`
+B. Wrap the App with a react-redux Provider, holding the store
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+C. Add redux-dev-tools
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## 2
 
-### `npm test`
+A. Define an action type LOG_IN in actionTypes.js
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+B. Define an action creator logIn in actions.js
 
-### `npm run build`
+C. In reducer.js, handle the LOG_IN action, so that the state contains the logged in user name.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+D. Connect Login.js to the state, using react-redux
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+E. Display the user name from the state if it set
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+F. Dispatch the logIn action when the login form is submitted
 
-### `npm run eject`
+G. Dispatch the logOut action when the logout button is clicked
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+H. On Page.js, show a welcome message containing the user's name
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A. Define todos as an empty array on the initial state.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+B. Connect TodoList to the state, and use state.todos instead of react state.
 
-## Learn More
+C. Create an addTodo action, and implement it in the reducer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+D. Create a removeTodo action, and implement it in the reducer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 3
 
-### Code Splitting
+Split user and todo state into different reducers and use combineReducers to combine them
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## 4 (advanced!)
 
-### Analyzing the Bundle Size
+This section uses async actions, which wasn't included in the slides.
+See here for a guide: https://redux.js.org/advanced/async-actions#async-actions
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+A. Add the thunk middleware to the Redux store
 
-### Making a Progressive Web App
+B. Add an async action creator "fetchDogs" that fetches dog breeds from https://dog.ceo/api/breeds/list/all
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+C. After the response is fetched, dispatch a "DOGS_FETCHED" action, updating the state with dogs
 
-### Advanced Configuration
+D. Create a component with a "Fetch dogs" button, which dispatches the fetchDogs action, and displays the results.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+E. Add a loading state to the dogs list. (You will need to fire a START_FETCHING_DOGS action before making the API call)
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+F. Handle errors from the API (add a FETCH_DOGS_FAILED action)

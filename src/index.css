@@ -25,6 +25,14 @@ main {
 
 ul {
   list-style: none;
+  max-width: 400px;
+  margin: 32px auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
 input {
