@@ -25,3 +25,7 @@ main {
 ul {
   list-style: none;
 }
+
+input {
+  margin: 8px;
+}
