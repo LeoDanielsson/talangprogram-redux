@@ -13,7 +13,7 @@ A. In index.js, create a redux store, using the reducer in reducer.js
 
 B. Wrap the App with a react-redux Provider, holding the store
 
-C. Add redux-dev-tools
+C. Optional: Add redux-dev-tools (https://github.com/zalmoxisus/redux-devtools-extension)
 
 ## 2
 
@@ -43,9 +43,7 @@ C. Create an addTodo action, and implement it in the reducer
 
 D. Create a removeTodo action, and implement it in the reducer
 
-## 3
-
-Split user and todo state into different reducers and use combineReducers to combine them
+E. Split user and todo state into different reducers and use combineReducers to combine them
 
 ## 4 (advanced!)
 
