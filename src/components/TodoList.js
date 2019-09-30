@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import TodoItem from './TodoItem';
+import { addTodo } from '../actions';
 
-export default () => {
-  const [todos, setTodos] = useState([]);
-
+const TodoList = ({ dispatch, todos }) => {
   const handleAddTodo = event => {
     event.preventDefault();
-    const newTodo = { text: event.target.todo.value, id: new Date().getTime() };
-    setTodos([...todos, newTodo]);
+    dispatch(addTodo(event.target.todo.value));
     event.target.todo.value = '';
   };
 
-  const deleteTodo = id => setTodos(todos.filter(todo => todo.id !== id));
+  const deleteTodo = id => dispatch(deleteTodo(id));
 
   return (
     <div>
@@ -27,3 +26,7 @@ export default () => {
     </div>
   );
 };
+
+const mapStateToProps = state => ({ todos: state.todos });
+
+export default connect(mapStateToProps)(TodoList);

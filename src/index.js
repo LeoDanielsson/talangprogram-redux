@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './reducer';
+import user from './userReducer';
+import todos from './todoReducer';
 import './index.css';
 import App from './components/App';
+
+const reducer = combineReducers({ user, todos });
 
 const store = createStore(
   reducer,
