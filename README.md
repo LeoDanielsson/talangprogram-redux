@@ -1,5 +1,12 @@
 # Excercises
 
+To start the app:
+
+```
+npm install
+npm start
+```
+
 ## 1
 
 A. In index.js, create a redux store, using the reducer in reducer.js
@@ -56,3 +63,7 @@ D. Create a component with a "Fetch dogs" button, which dispatches the fetchDogs
 E. Add a loading state to the dogs list. (You will need to fire a START_FETCHING_DOGS action before making the API call)
 
 F. Handle errors from the API (add a FETCH_DOGS_FAILED action)
+
+```
+
+```
