@@ -14,7 +14,8 @@ header {
   color: #18344b;
   display: flex;
   justify-content: space-between;
-  padding: 32px;
+  align-items: center;
+  padding: 16px 32px;
 }
 
 main {
@@ -28,4 +29,12 @@ ul {
 
 input {
   margin: 8px;
+}
+
+button,
+input {
+  font-size: inherit;
+  padding: 4px;
+  border: 1px solid #888;
+  border-radius: 2px;
 }

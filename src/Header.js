@@ -3,7 +3,7 @@ import Login from './Login';
 
 export default () => (
   <header className='App-header'>
-    ComHem.se
+    <h3>Redux tutorial</h3>
     <Login />
   </header>
 );

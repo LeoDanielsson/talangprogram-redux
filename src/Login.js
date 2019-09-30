@@ -14,14 +14,14 @@ export default () => {
     return (
       <form onSubmit={handleLogin}>
         <input name='name' />
-        <button>Logga in</button>
+        <button>Log in</button>
       </form>
     );
   }
 
   return (
     <div>
-      {user.name} <button onClick={handleLogout}>Logga ut</button>
+      {user.name} <button onClick={handleLogout}>Log out</button>
     </div>
   );
 };

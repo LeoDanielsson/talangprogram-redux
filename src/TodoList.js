@@ -15,10 +15,9 @@ export default () => {
 
   return (
     <div>
-      <h2>To do list</h2>
       <form onSubmit={handleAddTodo}>
         <input name='todo' />
-        <button>Lägg till</button>
+        <button>Add</button>
       </form>
       <ul>
         {todos.map(todo => (
