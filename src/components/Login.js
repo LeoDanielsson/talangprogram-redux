@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { logIn, logOut } from '../actions';
 
-export default () => {
-  const [user, setUser] = useState();
-
+const Login = ({ dispatch, user }) => {
   const handleLogin = event => {
     event.preventDefault();
-    setUser({ name: event.target.name.value });
+    dispatch(logIn(event.target.name.value));
   };
 
-  const handleLogout = () => setUser(null);
+  const handleLogout = () => {
+    dispatch(logOut());
+  };
 
   if (!user) {
     return (
@@ -25,3 +27,9 @@ export default () => {
     </div>
   );
 };
+
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(Login);
